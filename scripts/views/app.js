@@ -21,6 +21,7 @@ $(function( $ ) {
 			'click .addwindow': 'createWindow',
             'click .win-button': 'toggleMenu',
             'click .application-button' : 'pressStatusBar',
+            'dblclick .application-button' : 'resetWindowPosition',
             'mouseleave #taskbar' : 'leaveMenu'
         },
 
@@ -69,6 +70,12 @@ $(function( $ ) {
         pressStatusBar: function(e){
            var guid = $(e.target).data("windowid");
             app.windowWidget.activateWindow($(".content[data-windowid=" +guid + "]").parent(),"disable");
+        },
+
+        resetWindowPosition : function(e){
+           var guid = $(e.target).data("windowid");
+            app.windowWidget.activateWindow($(".content[data-windowid=" +guid + "]").parent(),"disable");
+            app.windowWidget.resetWindowPosition($(".content[data-windowid=" +guid + "]").parent());
         }
 	});
 });

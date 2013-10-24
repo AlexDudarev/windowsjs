@@ -39,6 +39,10 @@ $(function() {
         window.draggable(dragEnable);
     }
 
+    app.windowWidget.resetWindowPosition = function(window){
+        window.css({ top: '-500px' })
+    };
+
 	// Kick things off by creating the **App**.
 	new app.AppView();
 
