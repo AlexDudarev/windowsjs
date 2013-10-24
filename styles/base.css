@@ -6,6 +6,9 @@ body{
     background-size: cover;
     overflow: hidden;
     margin: 0px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
     /*background-color: lightgrey;*/
 }
 
@@ -22,17 +25,21 @@ body{
             -webkit-padding-start: 0px;
     display: none;// close by default
     z-index: 1000;
+    bottom: 0px;
+    margin: 0px;
+    border: solid 1px;
+    list-style-type: none;
 }
 
 #taskbar li {
     color: white;
-    padding: 5px;
+    padding: 5px;    
 }
 #taskbar li:hover{
     background-color: #0044a6;
 }
 
-.window{ left: 50px; top: 50px; min-height: 300px; min-width: 500px;
+.window{ left: 50px; top: -500px; min-height: 300px; min-width: 500px;
          border: 2px solid black; border-radius: 5px; position: absolute; overflow: hidden;}
 
 .title {height: 26px; width: 100%; position: relative; background-color: #41519b;
@@ -72,6 +79,12 @@ body{
 .minimize{
     height: auto;
     width: auto;
+}
+
+#windowsapp{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 
 #status-bar{
